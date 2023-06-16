@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[russian]{babel}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+\lstset{
+    language=C++,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    breakatwhitespace=true,
+}
+
+\begin{document}
+
+\section*{Документация}
+
+\subsection*{Введение}
+Эта документация описывает реализацию класса multigraph и различные алгоритмы, которые могут быть выполнены на нем. Код, приведенный в \texttt{main.cpp } файле демонстрирует использование класса multigraph и следующих алгоритмов:
+
+\begin{itemize}
+    \item Depth-First Search (DFS) для нахождения компонентов и эйлеровых циклов в мультиграфе.
+    \item Breadth-First Search (BFS) для поиска дополнительных путей в остаточной сети.
+    \item Алгоритм сопоставления для нахождения дополняющих цепочек в сопоставлении.
+\end{itemize}
+
+\subsection*{Class \texttt{Edge}}
+Этот класс представляет ребро в мультиграфе. Он обладает следующими атрибутами:
+
+\begin{itemize}
+    \item \texttt{source} -исходная вершина ребра.
+    \item \texttt{destination} - конечная вершина ребра.
+    \item \texttt{capacity} - пропускная способность ребра.
+\end{itemize}
+
+\subsection*{Class \texttt{MultiGraph}}
+Этот класс представляет собой мультиграф. Он имеет следующие приватные атрибуты:
+\begin{itemize}
+    \item \texttt{numVertices} - количество вершин в мультиграфе.
+    \item \texttt{adjacencyList} - представление списка смежности мультиграфа.
+\end{itemize}
+
+Класс предоставляет следующие публичные методы:
+
+\begin{itemize}
+    \item \texttt{MultiGraph(int numVertices)} - конструктор для создания мультиграфа с заданным количеством вершин.
+    \item \texttt{void addEdge(int source, int destination, int capacity)} - добавляет ребро к мультиграфу.
+    \item \texttt{vector<int> findMaximumClique()} - находит максимальную клику в мультиграфе.
+    \item \texttt{int findMaxFlow(int source, int sink, vector<int>\& path)} - находит максимальный поток в сети, используя алгоритм Форда-Фалкерсона.
+    \item \texttt{vector<int> findEulerianCycle()} - находит эйлеровский цикл в мультиграфе.
+    \item \texttt{bool isEulerian()} - проверяет, имеет ли мультиграф цикл Эйлера.
+    \item \texttt{vector<vector<int>> findStronglyConnectedComponents()} - находит сильно связанные компоненты в мультиграфе, используя алгоритм Косарайю.
+\end{itemize}
+
+Для получения подробных объяснений каждого метода, пожалуйста, обратитесь к комментариям к коду в \texttt{main.cpp }.
+
+\end{document}

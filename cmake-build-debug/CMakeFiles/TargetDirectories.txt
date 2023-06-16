@@ -1,0 +1,3 @@
+C:/Users/Ростислав/Multigraph/cmake-build-debug/CMakeFiles/multigrapfs.dir
+C:/Users/Ростислав/Multigraph/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ростислав/Multigraph/cmake-build-debug/CMakeFiles/rebuild_cache.dir
